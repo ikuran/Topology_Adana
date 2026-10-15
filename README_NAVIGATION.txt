@@ -1,0 +1,1 @@
+Navigation v4: WebXR reference-space changes removed. A THREE.Group player rig now owns XR camera and controllers. Hold trigger to fly, left stick moves, right stick turns/ascends. Install worlds/*.html. Untested on physical Quest 3.
