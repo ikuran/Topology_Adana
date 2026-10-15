@@ -1,1 +1,0 @@
-Navigation v3: Two worlds audited for JS syntax. XR locomotion now runs in all immersive sessions; desktop movement is disabled in VR; thumbstick axes choose active pair. Quest 3 hardware validation remains required. Separate HTML pages still require VR re-entry.
