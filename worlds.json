@@ -1,6 +1,11 @@
+
 [
   {
-    "title": "demo world",
-    "url": "worlds/demo-world/index.html"
+    "title": "Niyazi Meshverse Deneme1",
+    "url": "worlds/Niyazi%20Meshverse%20Deneme1.html"
+  },
+  {
+    "title": "Meshverse Scene Gorkem",
+    "url": "worlds/meshverse_scene_gorkem.html"
   }
 ]
