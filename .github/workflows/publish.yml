@@ -1,1 +1,62 @@
 
+name: Publish TopoLogic Portal
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate worlds list
+        run: |
+          python3 - <<'PY'
+          import os, json
+          worlds = []
+          root = "worlds"
+          if os.path.isdir(root):
+              for current, dirs, files in os.walk(root):
+                  dirs.sort()
+                  for file in sorted(files):
+                      if file.lower().endswith(".html"):
+                          path = os.path.join(current, file).replace("\\", "/")
+                          name = os.path.splitext(os.path.basename(file))[0]
+                          if name.lower() == "index":
+                              name = os.path.basename(current)
+                          worlds.append({
+                              "name": name.replace("-", " ").replace("_", " ").title(),
+                              "url": path
+                          })
+          with open("worlds.json", "w", encoding="utf-8") as f:
+              json.dump(worlds, f, ensure_ascii=False, indent=2)
+          PY
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
+
