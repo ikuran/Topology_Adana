@@ -1,27 +1,22 @@
 [
   {
-  "title": "Morphosis"
-  "url": "worlds/Morphosis.html"
-}
+    "title": "Morphosis",
+    "url": "worlds/Morphosis.html"
+  },
   {
-    "title": "FLUXFIELD"
+    "title": "FLUXFIELD",
     "url": "worlds/Fluxfield.html"
   },
   {
-    "title": "MESHVERSE"
+    "title": "MESHVERSE",
     "url": "worlds/Meshverse.html"
   },
-  
   {
-  "title": "Nexus"
-  "url": "worlds/Nexus.html"
-},
-  
+    "title": "Nexus",
+    "url": "worlds/Nexus.html"
+  },
   {
-  "title": "LIMINAL"
-  "url": "worlds/Liminal.html"
-}
-
-  
-  
+    "title": "LIMINAL",
+    "url": "worlds/Liminal.html"
+  }
 ]
